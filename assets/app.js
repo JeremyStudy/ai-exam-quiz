@@ -64,33 +64,81 @@
   function pct(a, b) { return b ? Math.round(a * 100 / b) : 0; }
 
   /* ---------------- 状态 ---------------- */
+  /* 背题/答题各自独立保存筛选配置，互不影响；配置会写入 localStorage */
   var state = {
     mode: 'study',
-    book: 'all',
-    status: 'all',
-    q: '',
+    filters: {
+      study: { book: 'all', status: 'all', q: '' },
+      quiz: { book: 'all', status: 'all', q: '', types: 'all' }
+    },
     pos: 0,
     // 背题模式默认显示答案；该显隐状态跨题目保持，并记住上次选择
     revealed: store.get('revealMode', true),
     quiz: null,
-    setup: { count: 10, shuffle: true }
+    setup: { count: 10, shuffle: true, order: store.get('optionOrder', 'doc') === 'random' ? 'random' : 'doc' }
   };
 
-  /* ---------------- 筛选 ---------------- */
-  function pool() {
-    return ALL.filter(function (q) {
-      if (state.book !== 'all' && String(q.book) !== state.book) return false;
-      if (state.status === 'unmastered' && mastered[q.id]) return false;
-      if (state.status === 'mastered' && !mastered[q.id]) return false;
-      if (state.status === 'wrong' && !wrong[q.id]) return false;
-      if (state.status === 'flagged' && (!q.status || q.status === 'ok')) return false;
-      if (state.q) {
-        var needle = state.q.toLowerCase();
-        var hay = (q.stem + ' ' + q.options.map(function (o) { return o.text; }).join(' ')).toLowerCase();
-        if (hay.indexOf(needle) === -1) return false;
-      }
-      return true;
+  function F() { return state.filters[state.mode]; }
+
+  var BOOK_LABEL = { all: '全部题库', '1': '文档1 · 算法工程师', '2': '文档2 · 系列实操' };
+  var BOOK_SHORT = { all: '全部题库', '1': '文档1', '2': '文档2' };
+  var STATUS_LABEL = {
+    all: '全部状态', unmastered: '未掌握', mastered: '已掌握', wrong: '错题本', flagged: '有标注'
+  };
+  var TYPE_LABEL = { all: '全部题型', choice: '选择题', single: '单选', multi: '多选', qa: '问答' };
+  var TYPE_KEYS = ['all', 'choice', 'single', 'multi', 'qa'];
+
+  /* 恢复上次保存的筛选配置（只记住题库/题型，状态与搜索属于临时筛选） */
+  (function restoreFilters() {
+    var saved = store.get('filters', null);
+    if (!saved || typeof saved !== 'object') return;
+    ['study', 'quiz'].forEach(function (m) {
+      var s = saved[m];
+      var d = state.filters[m];
+      if (!s || typeof s !== 'object') return;
+      if (s.book === 'all' || s.book === '1' || s.book === '2') d.book = s.book;
+      if (m === 'quiz' && TYPE_LABEL[s.types]) d.types = s.types;
     });
+  })();
+
+  function persistFilters() {
+    store.set('filters', {
+      study: { book: state.filters.study.book },
+      quiz: { book: state.filters.quiz.book, types: state.filters.quiz.types }
+    });
+  }
+
+  /* ---------------- 筛选 ---------------- */
+  function matchesFilter(q, f, ignoreType) {
+    if (f.book !== 'all' && String(q.book) !== f.book) return false;
+    if (f.status === 'unmastered' && mastered[q.id]) return false;
+    if (f.status === 'mastered' && !mastered[q.id]) return false;
+    if (f.status === 'wrong' && !wrong[q.id]) return false;
+    if (f.status === 'flagged' && (!q.status || q.status === 'ok')) return false;
+    if (!ignoreType && f.types && f.types !== 'all') {
+      if (f.types === 'choice') { if (q.type !== 'single' && q.type !== 'multi') return false; }
+      else if (q.type !== f.types) return false;
+    }
+    if (f.q) {
+      var needle = f.q.toLowerCase();
+      var hay = (q.stem + ' ' + q.options.map(function (o) { return o.text; }).join(' ')).toLowerCase();
+      if (hay.indexOf(needle) === -1) return false;
+    }
+    return true;
+  }
+
+  function pool() {
+    var f = F();
+    return ALL.filter(function (q) { return matchesFilter(q, f); });
+  }
+
+  /* 工具栏与当前模式配置保持一致 */
+  function syncToolbar() {
+    var f = F();
+    var b = $('#bookSel'), s = $('#statusSel'), i = $('#searchInput');
+    if (b && b.value !== f.book) b.value = f.book;
+    if (s && s.value !== f.status) s.value = f.status;
+    if (i && i.value !== f.q && document.activeElement !== i) i.value = f.q;
   }
 
   /* ---------------- 渲染：进度 ---------------- */
@@ -125,6 +173,8 @@
   }
 
   /* ---------------- 选项 HTML ---------------- */
+  /* display 数组元素：{ key: 显示的字母(A/B/C…), orig: 文档原字母, text }
+     不传 display 时按文档顺序展示（orig 与 key 相同）。 */
   function optionListHTML(q, opts) {
     opts = opts || {};
     var revealed = !!opts.revealed;
@@ -134,16 +184,19 @@
     var correctKeys = q.answer ? q.answer.split('') : [];
     if (q.type === 'qa') return '';
 
-    return '<ol class="options">' + q.options.map(function (o) {
+    var display = opts.display || q.options.map(function (o) { return { key: o.key, orig: o.key, text: o.text }; });
+
+    return '<ol class="options">' + display.map(function (o) {
+      var orig = o.orig || o.key;
       var cls = 'opt';
       var mark = '';
       if (quizMode && !answered) {
         cls += ' clickable';
-        if (picked.indexOf(o.key) !== -1) cls += ' picked';
+        if (picked.indexOf(orig) !== -1) cls += ' picked';
       }
       if (revealed) {
-        var isCorrect = correctKeys.indexOf(o.key) !== -1;
-        var isPicked = picked.indexOf(o.key) !== -1;
+        var isCorrect = correctKeys.indexOf(orig) !== -1;
+        var isPicked = picked.indexOf(orig) !== -1;
         if (isCorrect) {
           cls += ' correct';
           mark = '<span class="mark">✓</span>';
@@ -156,9 +209,35 @@
           cls += ' dim';
         }
       }
-      return '<li class="' + cls + '"' + (quizMode && !answered ? ' data-action="pick" data-key="' + o.key + '"' : '') + '>' +
-        '<span class="key">' + o.key + '</span><span class="txt">' + esc(o.text) + '</span>' + mark + '</li>';
+      return '<li class="' + cls + '"' + (quizMode && !answered ? ' data-action="pick" data-key="' + orig + '"' : '') + '>' +
+        '<span class="key">' + esc(o.key) + '</span><span class="txt">' + esc(o.text) + '</span>' + mark + '</li>';
     }).join('') + '</ol>';
+  }
+
+  /* 按设置生成当前题的展示选项（随机时打乱位置，并按显示顺序重新标 A/B/C/D） */
+  function buildDisplayOptions(q, order) {
+    var arr = q.options.map(function (o) { return { orig: o.key, text: o.text }; });
+    if (order === 'random') {
+      for (var i = arr.length - 1; i > 0; i--) {
+        var j = Math.floor(Math.random() * (i + 1));
+        var t = arr[i]; arr[i] = arr[j]; arr[j] = t;
+      }
+    }
+    var letters = 'ABCDEFGH';
+    return arr.map(function (o, i) { return { key: letters.charAt(i), orig: o.orig, text: o.text }; });
+  }
+
+  /* 同一题的展示顺序在一次作答内保持不变（多选反复勾选、反馈重绘都不会跳动） */
+  function ensureDisplayOptions() {
+    var quiz = state.quiz;
+    if (!quiz) return null;
+    var q = byId(quiz.ids[quiz.pos]);
+    if (!q) return null;
+    if (!quiz.displayOpts || quiz.displayFor !== q.id) {
+      quiz.displayOpts = buildDisplayOptions(q, quiz.optionOrder);
+      quiz.displayFor = q.id;
+    }
+    return quiz.displayOpts;
   }
 
   /* ---------------- 答案/解析区 ---------------- */
@@ -178,8 +257,10 @@
     }
 
     if (q.docAnswer && q.docAnswer !== q.answer) {
+      var docText = q.options.filter(function (x) { return x.key === q.docAnswer; })[0];
       html += '<div class="block doc-ans"><h4>⛔ 文件原答案</h4><p>' + esc(q.docAnswer) +
-        '（经逐题复核判定有误，本平台已按正确结论修正，详见下方「我的见解」）</p></div>';
+        (docText ? '．' + esc(docText.text) : '') +
+        '（按文档顺序的字母；经逐题复核判定有误，本平台已按正确结论修正，详见下方「我的见解」）</p></div>';
     }
 
     if (q.explain) {
@@ -257,40 +338,105 @@
     renderQuizStep();
   }
 
+  function filterSummaryHTML(f) {
+    var html = '';
+    if (f.book !== 'all') html += '<span class="chip">📚 ' + BOOK_SHORT[f.book] + '</span>';
+    if (f.status !== 'all') html += '<span class="chip">' + STATUS_LABEL[f.status] + '</span>';
+    if (f.types && f.types !== 'all') html += '<span class="chip">' + TYPE_LABEL[f.types] + '</span>';
+    if (f.q) html += '<span class="chip">🔍 ' + esc(f.q) + '</span>';
+    return html;
+  }
+
   function renderQuizSetup() {
+    var f = F();
     var list = pool();
-    var wrongIds = Object.keys(wrong).filter(function (id) { return byId(id); });
+    var wrongInPool = list.filter(function (q) { return !!wrong[q.id]; });
+    var bookCount = { all: ALL.length };
+    ALL.forEach(function (q) { bookCount[q.book] = (bookCount[q.book] || 0) + 1; });
+
+    /* 题型计数：忽略题型条件，保留题库/状态/搜索，便于用户看到“这个范围里有哪些题型” */
+    var base = ALL.filter(function (q) { return matchesFilter(q, f, true); });
+    var typeCount = { single: 0, multi: 0, qa: 0 };
+    base.forEach(function (q) { typeCount[q.type] = (typeCount[q.type] || 0) + 1; });
+
+    var bookPills = [['all', '全部（' + bookCount.all + '）'], ['1', '文档1（' + (bookCount['1'] || 0) + '）'], ['2', '文档2（' + (bookCount['2'] || 0) + '）']].map(function (b) {
+      return '<button type="button" class="pill' + (f.book === b[0] ? ' active' : '') + '" data-action="set-quiz-book" data-b="' + b[0] + '">' + b[1] + '</button>';
+    }).join('');
+    var typePills = [
+      ['all', '全部题型（' + base.length + '）'],
+      ['choice', '选择题（' + (typeCount.single + typeCount.multi) + '）'],
+      ['single', '单选（' + typeCount.single + '）'],
+      ['multi', '多选（' + typeCount.multi + '）'],
+      ['qa', '问答（' + typeCount.qa + '）']
+    ].map(function (t) {
+      return '<button type="button" class="pill' + (f.types === t[0] ? ' active' : '') + '" data-action="set-quiz-type" data-t="' + t[0] + '">' + t[1] + '</button>';
+    }).join('');
     var countPills = [10, 20, 'all'].map(function (c) {
       return '<button type="button" class="pill' + (state.setup.count === c ? ' active' : '') + '" data-action="set-count" data-c="' + c + '">' +
         (c === 'all' ? '全部（' + list.length + '）' : c + ' 题') + '</button>';
     }).join('');
     var shufflePill = '<button type="button" class="pill' + (state.setup.shuffle ? ' active' : '') + '" data-action="toggle-shuffle">' +
       (state.setup.shuffle ? '🔀 随机顺序' : '↕️ 顺序出题') + '</button>';
+    var optionOrderPills =
+      '<button type="button" class="pill' + (state.setup.order === 'doc' ? ' active' : '') + '" data-action="set-option-order" data-o="doc">📄 文档顺序</button>' +
+      '<button type="button" class="pill' + (state.setup.order === 'random' ? ' active' : '') + '" data-action="set-option-order" data-o="random">🎲 随机打乱</button>';
+    var hasFilter = f.book !== 'all' || f.status !== 'all' || !!f.q || (f.types && f.types !== 'all');
+    var breakdown = '可选范围共 ' + base.length + ' 题：单选 ' + typeCount.single + ' · 多选 ' + typeCount.multi + ' · 问答 ' + typeCount.qa;
 
     var card = '<article class="card">' +
       '<div class="card-head"><span class="chip type">答题模式</span>' +
       '<span class="chip">当前范围 ' + list.length + ' 题</span>' +
-      '<span class="spacer"></span><button type="button" class="btn small ghost" data-action="reset">清除本机进度</button></div>' +
+      filterSummaryHTML(f) +
+      '<span class="spacer"></span>' + (hasFilter ? '<button type="button" class="btn small ghost" data-action="clear-quiz-filters">清空筛选</button>' : '') +
+      '<button type="button" class="btn small ghost" data-action="reset">清除本机进度</button></div>' +
       '<div class="card-body setup">' +
       '<div><h2 class="stem">准备开始一轮练习</h2>' +
-      '<p class="hint">按上方筛选条件抽题。选中答案后立即判分，并展开解析、记忆要点、易错点与审核见解；答对的题自动记为已掌握，答错自动进错题本。</p></div>' +
+      '<p class="hint">答题模式有独立的题库/题型/筛选配置（与背题模式互不影响，且会记住）。选中答案后立即判分，并展开解析、记忆要点、易错点与审核见解；答对的题自动记为已掌握，答错自动进错题本。</p></div>' +
+      '<div class="setup-row">' +
+      '<div class="field"><span class="field-label">题库</span><div class="range-pills">' + bookPills + '</div></div>' +
+      '</div>' +
+      '<div class="setup-row">' +
+      '<div class="field"><span class="field-label">题型</span><div class="range-pills">' + typePills + '</div></div>' +
+      '</div>' +
+      '<p class="hint" style="margin:-4px 0 0">' + esc(breakdown) + '</p>' +
       '<div class="setup-row">' +
       '<div class="field"><span class="field-label">题量</span><div class="range-pills">' + countPills + '</div></div>' +
-      '<div class="field"><span class="field-label">顺序</span><div class="range-pills">' + shufflePill + '</div></div>' +
+      '<div class="field"><span class="field-label">题目顺序</span><div class="range-pills">' + shufflePill + '</div></div>' +
       '</div>' +
       '<div class="setup-row">' +
+      '<div class="field"><span class="field-label">选项顺序</span><div class="range-pills">' + optionOrderPills + '</div></div>' +
+      '</div>' +
       '<button type="button" class="btn primary" data-action="start"' + (list.length ? '' : ' disabled') + '>开始答题（' +
       (state.setup.count === 'all' ? list.length : Math.min(state.setup.count, list.length)) + ' 题）</button>' +
-      '<button type="button" class="btn" data-action="start-wrong"' + (wrongIds.length ? '' : ' disabled') + '>只练错题（' + wrongIds.length + '）</button>' +
+      '<button type="button" class="btn" data-action="start-wrong"' + (wrongInPool.length ? '' : ' disabled') + '>只练错题（' + wrongInPool.length + '）</button>' +
       '</div>' +
-      '<p class="hint">多选题需勾选后点「提交答案」；问答题先自答，再点「显示参考答案」并自评。</p>' +
+      '<p class="hint">多选题需勾选后点「提交答案」；问答题先自答，再点「显示参考答案」并自评。选项顺序可切换「文档顺序 / 随机打乱」，设置会被记住。</p>' +
       '</div></article>';
     $('#view').innerHTML = card;
   }
 
-  function startQuiz(ids) {
+  /* 防御性校验：确保本轮题目一定落在 scope（题库/题型）内 */
+  function inScope(q, scope) {
+    if (!q || !scope) return false;
+    if (scope.book && scope.book !== 'all' && String(q.book) !== scope.book) return false;
+    var t = scope.types || 'all';
+    if (t !== 'all') {
+      if (t === 'choice') { if (q.type !== 'single' && q.type !== 'multi') return false; }
+      else if (q.type !== t) return false;
+    }
+    return true;
+  }
+
+  function startQuiz(ids, scope) {
+    var f = F();
+    var sc = scope || { book: f.book, status: f.status, q: f.q, types: f.types || 'all' };
+    ids = ids.filter(function (id) { return inScope(byId(id), sc); });
     if (!ids.length) return;
-    state.quiz = { ids: ids.slice(), pos: 0, correct: 0, answered: false, picked: [], results: [] };
+    state.quiz = {
+      ids: ids.slice(), pos: 0, correct: 0, answered: false, picked: [], results: [],
+      optionOrder: state.setup.order, displayOpts: null, displayFor: null,
+      scope: sc
+    };
     renderQuizStep();
   }
 
@@ -311,6 +457,22 @@
     return a;
   }
 
+  function quizScopeLabel(scope) {
+    if (!scope) return '';
+    var parts = [BOOK_SHORT[scope.book] || BOOK_SHORT.all];
+    if (scope.types && scope.types !== 'all') parts.push('仅' + TYPE_LABEL[scope.types]);
+    if (scope.status !== 'all') parts.push(STATUS_LABEL[scope.status] || scope.status);
+    if (scope.q) parts.push('🔍 ' + scope.q);
+    return parts.join(' · ');
+  }
+
+  function scopeChanged(quiz) {
+    if (!quiz || !quiz.scope) return false;
+    var f = F();
+    return quiz.scope.book !== f.book || quiz.scope.status !== f.status || quiz.scope.q !== f.q ||
+      (quiz.scope.types || 'all') !== (f.types || 'all');
+  }
+
   function quizTopHTML(quiz) {
     var total = quiz.ids.length;
     var answered = quiz.results.length;
@@ -319,6 +481,7 @@
       '<span>第 <b>' + (quiz.pos + 1) + '</b>/<b>' + total + '</b> 题</span>' +
       '<span>已答 <b>' + answered + '</b></span>' +
       '<span>正确 <b>' + quiz.correct + '</b>（' + p + '%）</span>' +
+      '<span class="scope-tag">📚 ' + esc(quizScopeLabel(quiz.scope)) + '</span>' +
       '<div class="qbar"><i style="width:' + pct(quiz.pos, total) + '%"></i></div>' +
       '<button type="button" class="btn small ghost" data-action="quit">结束本轮</button>' +
       '</div>';
@@ -334,10 +497,11 @@
     var list = pool(); // 仅用于展示导航时不必
 
     var body = '';
+    var display = ensureDisplayOptions();
     body += '<h2 class="stem' + (q.type === 'qa' ? ' qa-stem' : '') + '">' + esc(q.stem) + '</h2>';
     body += optionListHTML(q, {
       quiz: true, answered: answered, revealed: answered,
-      picked: picked, gradedOk: quiz.lastOk
+      picked: picked, gradedOk: quiz.lastOk, display: display
     });
 
     if (!answered) {
@@ -383,9 +547,17 @@
       }
     }
 
-    $('#view').innerHTML = quizTopHTML(quiz) +
+    var notice = '';
+    if (scopeChanged(quiz)) {
+      notice = '<div class="notice-warn">⚠️ 筛选条件已更改，本轮仍按开始时的范围（' + esc(quizScopeLabel(quiz.scope)) +
+        '）出题，更改将在下一轮生效。<button type="button" class="btn small ghost" data-action="restart-setup">返回设置重开</button></div>';
+    }
+
+    $('#view').innerHTML = notice + quizTopHTML(quiz) +
       '<article class="card"><div class="card-head">' + headerChips(q) +
-      '<span class="spacer"></span><span class="chip">' +
+      '<span class="spacer"></span>' +
+      (quiz.optionOrder === 'random' && q.type !== 'qa' ? '<span class="chip">🎲 选项乱序</span>' : '') +
+      '<span class="chip">' +
       (q.type === 'multi' ? '多选' : q.type === 'qa' ? '自评' : '单选') + '</span></div>' +
       '<div class="card-body">' + body + '</div></article>';
   }
@@ -500,6 +672,26 @@
         state.setup.count = el.getAttribute('data-c') === 'all' ? 'all' : parseInt(el.getAttribute('data-c'), 10);
         renderQuizSetup();
         break;
+      case 'set-quiz-book':
+        F().book = el.getAttribute('data-b');
+        persistFilters();
+        render();
+        break;
+      case 'set-quiz-type':
+        F().types = el.getAttribute('data-t') || 'all';
+        persistFilters();
+        render();
+        break;
+      case 'clear-quiz-filters':
+        F().book = 'all'; F().status = 'all'; F().q = ''; F().types = 'all';
+        persistFilters();
+        render();
+        break;
+      case 'set-option-order':
+        state.setup.order = el.getAttribute('data-o') === 'random' ? 'random' : 'doc';
+        store.set('optionOrder', state.setup.order);
+        renderQuizSetup();
+        break;
       case 'toggle-shuffle':
         state.setup.shuffle = !state.setup.shuffle;
         renderQuizSetup();
@@ -566,8 +758,9 @@
       case 'retry-wrong': {
         quiz = state.quiz;
         var ids = quiz ? quiz.results.filter(function (r) { return !r.ok; }).map(function (r) { return r.id; }) : [];
+        var keepScope = quiz ? quiz.scope : null;
         state.quiz = null;
-        startQuiz(ids);
+        startQuiz(ids, keepScope);
         break;
       }
       case 'to-study':
@@ -591,6 +784,7 @@
 
   /* ---------------- 视图渲染入口 ---------------- */
   function render() {
+    syncToolbar();
     // 背题模式下答案可见即视为「已看」；显隐状态跨题目保持
     if (state.mode === 'study' && state.revealed) {
       var list = pool();
@@ -644,17 +838,26 @@
     });
 
     $('#bookSel').addEventListener('change', function () {
-      state.book = this.value; state.pos = 0; render();
+      F().book = this.value;
+      persistFilters();
+      if (state.mode === 'study') state.pos = 0;
+      render();
     });
     $('#statusSel').addEventListener('change', function () {
-      state.status = this.value; state.pos = 0; render();
+      F().status = this.value;
+      persistFilters();
+      if (state.mode === 'study') state.pos = 0;
+      render();
     });
     var timer = null;
     $('#searchInput').addEventListener('input', function () {
       var v = this.value;
       clearTimeout(timer);
       timer = setTimeout(function () {
-        state.q = v.trim(); state.pos = 0; render();
+        F().q = v.trim();
+        persistFilters();
+        if (state.mode === 'study') state.pos = 0;
+        render();
       }, 120);
     });
     $('#randomBtn').addEventListener('click', function () {
@@ -697,9 +900,10 @@
       if (!q) return;
       if (/^[1-6]$/.test(e.key) && !quiz.answered && q.type !== 'qa') {
         var idx = parseInt(e.key, 10) - 1;
-        if (q.options[idx]) {
+        var display = ensureDisplayOptions();
+        if (display && display[idx]) {
           e.preventDefault();
-          var key = q.options[idx].key;
+          var key = display[idx].orig;
           if (q.type === 'single') commitAnswer([key], null);
           else {
             if (quiz.picked.indexOf(key) === -1) quiz.picked.push(key);

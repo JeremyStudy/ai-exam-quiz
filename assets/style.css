@@ -240,8 +240,16 @@ button{font-family:inherit;cursor:pointer}
 /* ============ 答题模式 ============ */
 .quiz-top{display:flex;flex-wrap:wrap;align-items:center;gap:8px 14px;margin-bottom:12px;font-size:13px;color:var(--text-2)}
 .quiz-top b{color:var(--text);font-variant-numeric:tabular-nums}
+.quiz-top .scope-tag{color:var(--text-2);font-size:12.5px;white-space:nowrap;max-width:min(46vw,340px);overflow:hidden;text-overflow:ellipsis}
 .quiz-top .qbar{flex:1;min-width:120px;height:7px;border-radius:99px;background:var(--bg-soft);border:1px solid var(--line);overflow:hidden}
 .quiz-top .qbar i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--brand),var(--brand-2));transition:width .25s}
+.notice-warn{
+  display:flex;flex-wrap:wrap;align-items:center;gap:10px;
+  margin-bottom:12px;padding:10px 14px;border-radius:12px;
+  background:var(--warn-soft);border:1px solid color-mix(in srgb,var(--warn) 35%,transparent);
+  color:var(--warn);font-size:13px;font-weight:650;line-height:1.5;
+}
+.notice-warn .btn{margin-left:auto;flex:none}
 .feedback-actions{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin-top:20px}
 .feedback-actions .btn.primary{margin-left:auto}
 
