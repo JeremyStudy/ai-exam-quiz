@@ -1,0 +1,2734 @@
+{
+ "single": [
+  {
+   "id": "single-01",
+   "type": "single",
+   "book": 1,
+   "section": "single",
+   "num": 1,
+   "stem": "在深度学习中，ReLU激活函数的主要优势是？",
+   "options": [
+    {
+     "key": "A",
+     "text": "输出范围有限"
+    },
+    {
+     "key": "B",
+     "text": "缓解梯度消失"
+    },
+    {
+     "key": "C",
+     "text": "计算复杂度高"
+    },
+    {
+     "key": "D",
+     "text": "仅适用于RNN"
+    }
+   ],
+   "answer": "B",
+   "docNum": "在深度学习中，ReLU激活函数的主要优势是？"
+  },
+  {
+   "id": "single-02",
+   "type": "single",
+   "book": 1,
+   "section": "single",
+   "num": 2,
+   "stem": "下列哪项技术最常用于防止神经网络过拟合？",
+   "options": [
+    {
+     "key": "A",
+     "text": "增加训练轮次"
+    },
+    {
+     "key": "B",
+     "text": "Dropout"
+    },
+    {
+     "key": "C",
+     "text": "增大学习率"
+    },
+    {
+     "key": "D",
+     "text": "删除验证集"
+    }
+   ],
+   "answer": "B",
+   "docNum": "下列哪项技术最常用于防止神经网络过拟合？"
+  },
+  {
+   "id": "single-03",
+   "type": "single",
+   "book": 1,
+   "section": "single",
+   "num": 3,
+   "stem": "在目标检测中，IoU指标用于衡量？",
+   "options": [
+    {
+     "key": "A",
+     "text": "类别置信度"
+    },
+    {
+     "key": "B",
+     "text": "预测框与真实框的重叠度"
+    },
+    {
+     "key": "C",
+     "text": "图像清晰度"
+    },
+    {
+     "key": "D",
+     "text": "网络参数量"
+    }
+   ],
+   "answer": "B",
+   "docNum": "在目标检测中，IoU指标用于衡量？"
+  },
+  {
+   "id": "single-04",
+   "type": "single",
+   "book": 1,
+   "section": "single",
+   "num": 4,
+   "stem": "Batch Normalization通常放在卷积层之后的哪一步骤？",
+   "options": [
+    {
+     "key": "A",
+     "text": "激活函数前"
+    },
+    {
+     "key": "B",
+     "text": "池化层前"
+    },
+    {
+     "key": "C",
+     "text": "全连接层后"
+    },
+    {
+     "key": "D",
+     "text": "损失函数后"
+    }
+   ],
+   "answer": "A",
+   "docNum": "Batch Normalization通常放在卷积层之后的哪一步骤？"
+  },
+  {
+   "id": "single-05",
+   "type": "single",
+   "book": 1,
+   "section": "single",
+   "num": 5,
+   "stem": "Transformer结构中，Positional Encoding的作用是？",
+   "options": [
+    {
+     "key": "A",
+     "text": "降低计算量"
+    },
+    {
+     "key": "B",
+     "text": "引入序列位置信息"
+    },
+    {
+     "key": "C",
+     "text": "增强梯度"
+    },
+    {
+     "key": "D",
+     "text": "压缩词向量"
+    }
+   ],
+   "answer": "B",
+   "docNum": "Transformer结构中，Positional Encoding的作用是？"
+  },
+  {
+   "id": "single-06",
+   "type": "single",
+   "book": 1,
+   "section": "single",
+   "num": 6,
+   "stem": "在强化学习中，Q-learning更新的是？",
+   "options": [
+    {
+     "key": "A",
+     "text": "策略函数"
+    },
+    {
+     "key": "B",
+     "text": "状态转移概率"
+    },
+    {
+     "key": "C",
+     "text": "状态-动作值函数"
+    },
+    {
+     "key": "D",
+     "text": "奖励函数"
+    }
+   ],
+   "answer": "C",
+   "docNum": "在强化学习中，Q-learning更新的是？"
+  },
+  {
+   "id": "single-07",
+   "type": "single",
+   "book": 1,
+   "section": "single",
+   "num": 7,
+   "stem": "LSTM与标准RNN相比，主要改进在于？",
+   "options": [
+    {
+     "key": "A",
+     "text": "减少参数量"
+    },
+    {
+     "key": "B",
+     "text": "引入门控机制"
+    },
+    {
+     "key": "C",
+     "text": "支持并行计算"
+    },
+    {
+     "key": "D",
+     "text": "无需反向传播"
+    }
+   ],
+   "answer": "B",
+   "docNum": "LSTM与标准RNN相比，主要改进在于？"
+  },
+  {
+   "id": "single-08",
+   "type": "single",
+   "book": 1,
+   "section": "single",
+   "num": 8,
+   "stem": "用于图像风格迁移的经典损失函数组合是？",
+   "options": [
+    {
+     "key": "A",
+     "text": "交叉熵 + MSE"
+    },
+    {
+     "key": "B",
+     "text": "内容损失 + 风格损失"
+    },
+    {
+     "key": "C",
+     "text": "IoU + Dice"
+    },
+    {
+     "key": "D",
+     "text": "KL散度 + 余弦相似度"
+    }
+   ],
+   "answer": "B",
+   "docNum": "用于图像风格迁移的经典损失函数组合是？"
+  },
+  {
+   "id": "single-09",
+   "type": "single",
+   "book": 1,
+   "section": "single",
+   "num": 9,
+   "stem": "在GAN训练中，判别器的目标函数本质是？",
+   "options": [
+    {
+     "key": "A",
+     "text": "最小化生成分布与真实分布的JS散度"
+    },
+    {
+     "key": "B",
+     "text": "最大化分类准确率"
+    },
+    {
+     "key": "C",
+     "text": "最小化像素级MSE"
+    },
+    {
+     "key": "D",
+     "text": "最大化梯度范数"
+    }
+   ],
+   "answer": "A",
+   "docNum": "在GAN训练中，判别器的目标函数本质是？"
+  },
+  {
+   "id": "single-10",
+   "type": "single",
+   "book": 1,
+   "section": "single",
+   "num": 10,
+   "stem": "ResNet引入残差连接的主要目的是？",
+   "options": [
+    {
+     "key": "A",
+     "text": "减少内存占用"
+    },
+    {
+     "key": "B",
+     "text": "解决深层网络退化"
+    },
+    {
+     "key": "C",
+     "text": "提高学习率"
+    },
+    {
+     "key": "D",
+     "text": "替代卷积操作"
+    }
+   ],
+   "answer": "B",
+   "docNum": "ResNet引入残差连接的主要目的是？"
+  },
+  {
+   "id": "single-11",
+   "type": "single",
+   "book": 1,
+   "section": "single",
+   "num": 11,
+   "stem": "下列哪种优化器自带自适应学习率？",
+   "options": [
+    {
+     "key": "A",
+     "text": "SGD"
+    },
+    {
+     "key": "B",
+     "text": "Adam"
+    },
+    {
+     "key": "C",
+     "text": "BGD"
+    },
+    {
+     "key": "D",
+     "text": "Momentum"
+    }
+   ],
+   "answer": "B",
+   "docNum": "下列哪种优化器自带自适应学习率？"
+  },
+  {
+   "id": "single-12",
+   "type": "single",
+   "book": 1,
+   "section": "single",
+   "num": 12,
+   "stem": "在BERT预训练中，Masked Language Model的作用是？",
+   "options": [
+    {
+     "key": "A",
+     "text": "预测下一个句子"
+    },
+    {
+     "key": "B",
+     "text": "恢复被遮盖的词"
+    },
+    {
+     "key": "C",
+     "text": "生成摘要"
+    },
+    {
+     "key": "D",
+     "text": "压缩模型"
+    }
+   ],
+   "answer": "B",
+   "docNum": "在BERT预训练中，Masked Language Model的作用是？"
+  },
+  {
+   "id": "single-13",
+   "type": "single",
+   "book": 1,
+   "section": "single",
+   "num": 13,
+   "stem": "语义分割任务常用的评价指标mIoU是指？",
+   "options": [
+    {
+     "key": "A",
+     "text": "平均类别交并比"
+    },
+    {
+     "key": "B",
+     "text": "平均像素精度"
+    },
+    {
+     "key": "C",
+     "text": "平均Dice系数"
+    },
+    {
+     "key": "D",
+     "text": "平均Hausdorff距离"
+    }
+   ],
+   "answer": "A",
+   "docNum": "语义分割任务常用的评价指标mIoU是指？"
+  },
+  {
+   "id": "single-14",
+   "type": "single",
+   "book": 1,
+   "section": "single",
+   "num": 14,
+   "stem": "决策树算法中，信息增益基于哪个概念？",
+   "options": [
+    {
+     "key": "A",
+     "text": "基尼指数"
+    },
+    {
+     "key": "B",
+     "text": "熵"
+    },
+    {
+     "key": "C",
+     "text": "欧氏距离"
+    },
+    {
+     "key": "D",
+     "text": "方差"
+    }
+   ],
+   "answer": "B",
+   "docNum": "决策树算法中，信息增益基于哪个概念？"
+  },
+  {
+   "id": "single-15",
+   "type": "single",
+   "book": 1,
+   "section": "single",
+   "num": 15,
+   "stem": "在联邦学习中，客户端上传的通常是？",
+   "options": [
+    {
+     "key": "A",
+     "text": "原始数据"
+    },
+    {
+     "key": "B",
+     "text": "模型梯度"
+    },
+    {
+     "key": "C",
+     "text": "完整模型"
+    },
+    {
+     "key": "D",
+     "text": "超参数"
+    }
+   ],
+   "answer": "B",
+   "docNum": "在联邦学习中，客户端上传的通常是？"
+  },
+  {
+   "id": "single-16",
+   "type": "single",
+   "book": 1,
+   "section": "single",
+   "num": 16,
+   "stem": "下列哪项不是卷积操作的超参数？",
+   "options": [
+    {
+     "key": "A",
+     "text": "步长"
+    },
+    {
+     "key": "B",
+     "text": "填充"
+    },
+    {
+     "key": "C",
+     "text": "通道数"
+    },
+    {
+     "key": "D",
+     "text": "权重衰减"
+    }
+   ],
+   "answer": "D",
+   "docNum": "下列哪项不是卷积操作的超参数？"
+  },
+  {
+   "id": "single-17",
+   "type": "single",
+   "book": 1,
+   "section": "single",
+   "num": 17,
+   "stem": "用于文本生成的采样策略中，temperature参数控制？",
+   "options": [
+    {
+     "key": "A",
+     "text": "句子长度"
+    },
+    {
+     "key": "B",
+     "text": "随机性程度"
+    },
+    {
+     "key": "C",
+     "text": "词频权重"
+    },
+    {
+     "key": "D",
+     "text": "批大小"
+    }
+   ],
+   "answer": "B",
+   "docNum": "用于文本生成的采样策略中，temperature参数控制？"
+  },
+  {
+   "id": "single-18",
+   "type": "single",
+   "book": 1,
+   "section": "single",
+   "num": 18,
+   "stem": "在AutoML中，神经架构搜索（NAS）的核心是？",
+   "options": [
+    {
+     "key": "A",
+     "text": "人工设计网络"
+    },
+    {
+     "key": "B",
+     "text": "自动寻找最优网络结构"
+    },
+    {
+     "key": "C",
+     "text": "压缩模型体积"
+    },
+    {
+     "key": "D",
+     "text": "增加数据集"
+    }
+   ],
+   "answer": "B",
+   "docNum": "在AutoML中，神经架构搜索（NAS）的核心是？"
+  },
+  {
+   "id": "single-19",
+   "type": "single",
+   "book": 1,
+   "section": "single",
+   "num": 19,
+   "stem": "下列哪种方法可将预训练模型适配小样本任务？",
+   "options": [
+    {
+     "key": "A",
+     "text": "数据增强"
+    },
+    {
+     "key": "B",
+     "text": "微调（Fine-tuning）"
+    },
+    {
+     "key": "C",
+     "text": "增加层数"
+    },
+    {
+     "key": "D",
+     "text": "减少通道"
+    }
+   ],
+   "answer": "B",
+   "docNum": "下列哪种方法可将预训练模型适配小样本任务？"
+  },
+  {
+   "id": "single-20",
+   "type": "single",
+   "book": 1,
+   "section": "single",
+   "num": 20,
+   "stem": "集成学习中，Bagging的主要思想是？",
+   "options": [
+    {
+     "key": "A",
+     "text": "顺序训练弱学习器"
+    },
+    {
+     "key": "B",
+     "text": "并行训练多样模型"
+    },
+    {
+     "key": "C",
+     "text": "共享权重"
+    },
+    {
+     "key": "D",
+     "text": "降低偏差"
+    }
+   ],
+   "answer": "B",
+   "docNum": "集成学习中，Bagging的主要思想是？"
+  },
+  {
+   "id": "single-21",
+   "type": "single",
+   "book": 1,
+   "section": "single",
+   "num": 21,
+   "stem": "在注意力机制中，缩放点积注意力的“缩放”因子是？",
+   "options": [
+    {
+     "key": "A",
+     "text": "特征维度平方根"
+    },
+    {
+     "key": "B",
+     "text": "序列长度"
+    },
+    {
+     "key": "C",
+     "text": "批大小"
+    },
+    {
+     "key": "D",
+     "text": "学习率"
+    }
+   ],
+   "answer": "A",
+   "docNum": "在注意力机制中，缩放点积注意力的“缩放”因子是？"
+  },
+  {
+   "id": "single-22",
+   "type": "single",
+   "book": 1,
+   "section": "single",
+   "num": 22,
+   "stem": "用于模型压缩的剪枝（Pruning）通常基于？",
+   "options": [
+    {
+     "key": "A",
+     "text": "权重重要性"
+    },
+    {
+     "key": "B",
+     "text": "梯度大小"
+    },
+    {
+     "key": "C",
+     "text": "损失值"
+    },
+    {
+     "key": "D",
+     "text": "学习率"
+    }
+   ],
+   "answer": "A",
+   "docNum": "用于模型压缩的剪枝（Pruning）通常基于？"
+  },
+  {
+   "id": "single-23",
+   "type": "single",
+   "book": 1,
+   "section": "single",
+   "num": 23,
+   "stem": "YOLOv5中，SPPF模块的作用是？",
+   "options": [
+    {
+     "key": "A",
+     "text": "减少参数量"
+    },
+    {
+     "key": "B",
+     "text": "增强多尺度特征"
+    },
+    {
+     "key": "C",
+     "text": "替换激活函数"
+    },
+    {
+     "key": "D",
+     "text": "降低分辨率"
+    }
+   ],
+   "answer": "B",
+   "docNum": "YOLOv5中，SPPF模块的作用是？"
+  },
+  {
+   "id": "single-24",
+   "type": "single",
+   "book": 1,
+   "section": "single",
+   "num": 24,
+   "stem": "下列哪项技术可将浮点模型转为低比特整数？",
+   "options": [
+    {
+     "key": "A",
+     "text": "知识蒸馏"
+    },
+    {
+     "key": "B",
+     "text": "量化（Quantization）"
+    },
+    {
+     "key": "C",
+     "text": "数据并行"
+    },
+    {
+     "key": "D",
+     "text": "梯度累积"
+    }
+   ],
+   "answer": "B",
+   "docNum": "下列哪项技术可将浮点模型转为低比特整数？"
+  },
+  {
+   "id": "single-25",
+   "type": "single",
+   "book": 1,
+   "section": "single",
+   "num": 25,
+   "stem": "在NLP中，BLEU指标主要用于评估？",
+   "options": [
+    {
+     "key": "A",
+     "text": "文本生成质量"
+    },
+    {
+     "key": "B",
+     "text": "分类准确率"
+    },
+    {
+     "key": "C",
+     "text": "实体识别F1"
+    },
+    {
+     "key": "D",
+     "text": "情感极性"
+    }
+   ],
+   "answer": "A",
+   "docNum": "在NLP中，BLEU指标主要用于评估？"
+  },
+  {
+   "id": "single-26",
+   "type": "single",
+   "book": 1,
+   "section": "single",
+   "num": 26,
+   "stem": "下列哪种损失函数适合处理类别不平衡？",
+   "options": [
+    {
+     "key": "A",
+     "text": "交叉熵"
+    },
+    {
+     "key": "B",
+     "text": "Focal Loss"
+    },
+    {
+     "key": "C",
+     "text": "MSE"
+    },
+    {
+     "key": "D",
+     "text": "Hinge Loss"
+    }
+   ],
+   "answer": "B",
+   "docNum": "下列哪种损失函数适合处理类别不平衡？"
+  },
+  {
+   "id": "single-27",
+   "type": "single",
+   "book": 1,
+   "section": "single",
+   "num": 27,
+   "stem": "在图神经网络中，GCN的核心操作是？",
+   "options": [
+    {
+     "key": "A",
+     "text": "邻接矩阵乘法"
+    },
+    {
+     "key": "B",
+     "text": "谱域卷积"
+    },
+    {
+     "key": "C",
+     "text": "池化聚合"
+    },
+    {
+     "key": "D",
+     "text": "随机游走"
+    }
+   ],
+   "answer": "B",
+   "docNum": "在图神经网络中，GCN的核心操作是？"
+  },
+  {
+   "id": "single-28",
+   "type": "single",
+   "book": 1,
+   "section": "single",
+   "num": 28,
+   "stem": "用于超参数优化的贝叶斯方法基于？",
+   "options": [
+    {
+     "key": "A",
+     "text": "网格搜索"
+    },
+    {
+     "key": "B",
+     "text": "高斯过程"
+    },
+    {
+     "key": "C",
+     "text": "随机搜索"
+    },
+    {
+     "key": "D",
+     "text": "遗传算法"
+    }
+   ],
+   "answer": "B",
+   "docNum": "用于超参数优化的贝叶斯方法基于？"
+  },
+  {
+   "id": "single-29",
+   "type": "single",
+   "book": 1,
+   "section": "single",
+   "num": 29,
+   "stem": "在Diffusion模型中，前向过程是？",
+   "options": [
+    {
+     "key": "A",
+     "text": "逐步去噪"
+    },
+    {
+     "key": "B",
+     "text": "逐步加噪"
+    },
+    {
+     "key": "C",
+     "text": "直接采样"
+    },
+    {
+     "key": "D",
+     "text": "梯度下降"
+    }
+   ],
+   "answer": "B",
+   "docNum": "在Diffusion模型中，前向过程是？"
+  },
+  {
+   "id": "single-30",
+   "type": "single",
+   "book": 1,
+   "section": "single",
+   "num": 30,
+   "stem": "下列哪项技术可加速Transformer推理？",
+   "options": [
+    {
+     "key": "A",
+     "text": "KV Cache"
+    },
+    {
+     "key": "B",
+     "text": "增加层数"
+    },
+    {
+     "key": "C",
+     "text": "降低批大小"
+    },
+    {
+     "key": "D",
+     "text": "移除注意力"
+    }
+   ],
+   "answer": "A",
+   "docNum": "下列哪项技术可加速Transformer推理？"
+  },
+  {
+   "id": "single-31",
+   "type": "single",
+   "book": 1,
+   "section": "single",
+   "num": 31,
+   "stem": "在推荐系统中，Embedding层的作用是？",
+   "options": [
+    {
+     "key": "A",
+     "text": "降维并捕捉特征关系"
+    },
+    {
+     "key": "B",
+     "text": "增加计算量"
+    },
+    {
+     "key": "C",
+     "text": "替代全连接层"
+    },
+    {
+     "key": "D",
+     "text": "正则化"
+    }
+   ],
+   "answer": "A",
+   "docNum": "在推荐系统中，Embedding层的作用是？"
+  },
+  {
+   "id": "single-32",
+   "type": "single",
+   "book": 1,
+   "section": "single",
+   "num": 32,
+   "stem": "用于目标跟踪的SORT算法核心是？",
+   "options": [
+    {
+     "key": "A",
+     "text": "卡尔曼滤波 + 匈牙利匹配"
+    },
+    {
+     "key": "B",
+     "text": "光流法"
+    },
+    {
+     "key": "C",
+     "text": "均值漂移"
+    },
+    {
+     "key": "D",
+     "text": "粒子滤波"
+    }
+   ],
+   "answer": "A",
+   "docNum": "用于目标跟踪的SORT算法核心是？"
+  },
+  {
+   "id": "single-33",
+   "type": "single",
+   "book": 1,
+   "section": "single",
+   "num": 33,
+   "stem": "下列哪项不是数据增强的常见方法？",
+   "options": [
+    {
+     "key": "A",
+     "text": "随机裁剪"
+    },
+    {
+     "key": "B",
+     "text": "Mixup"
+    },
+    {
+     "key": "C",
+     "text": "增加通道数"
+    },
+    {
+     "key": "D",
+     "text": "颜色抖动"
+    }
+   ],
+   "answer": "C",
+   "docNum": "下列哪项不是数据增强的常见方法？"
+  },
+  {
+   "id": "single-34",
+   "type": "single",
+   "book": 1,
+   "section": "single",
+   "num": 34,
+   "stem": "在BERT微调中，通常冻结的层是？",
+   "options": [
+    {
+     "key": "A",
+     "text": "Embedding层"
+    },
+    {
+     "key": "B",
+     "text": "输出层"
+    },
+    {
+     "key": "C",
+     "text": "中间Transformer层"
+    },
+    {
+     "key": "D",
+     "text": "全部层"
+    }
+   ],
+   "answer": "A",
+   "docNum": "在BERT微调中，通常冻结的层是？"
+  },
+  {
+   "id": "single-35",
+   "type": "single",
+   "book": 1,
+   "section": "single",
+   "num": 35,
+   "stem": "下列哪种算法属于无监督聚类？",
+   "options": [
+    {
+     "key": "A",
+     "text": "K-Means"
+    },
+    {
+     "key": "B",
+     "text": "SVM"
+    },
+    {
+     "key": "C",
+     "text": "逻辑回归"
+    },
+    {
+     "key": "D",
+     "text": "随机森林"
+    }
+   ],
+   "answer": "A",
+   "docNum": "下列哪种算法属于无监督聚类？"
+  },
+  {
+   "id": "single-36",
+   "type": "single",
+   "book": 1,
+   "section": "single",
+   "num": 36,
+   "stem": "在模型服务化中，gRPC相比REST的主要优势是？",
+   "options": [
+    {
+     "key": "A",
+     "text": "基于HTTP/1"
+    },
+    {
+     "key": "B",
+     "text": "二进制传输更高效"
+    },
+    {
+     "key": "C",
+     "text": "无需IDL"
+    },
+    {
+     "key": "D",
+     "text": "仅支持Python"
+    }
+   ],
+   "answer": "B",
+   "docNum": "在模型服务化中，gRPC相比REST的主要优势是？"
+  },
+  {
+   "id": "single-37",
+   "type": "single",
+   "book": 1,
+   "section": "single",
+   "num": 37,
+   "stem": "用于文本去重的SimHash算法核心思想是？",
+   "options": [
+    {
+     "key": "A",
+     "text": "局部敏感哈希"
+    },
+    {
+     "key": "B",
+     "text": "梯度下降"
+    },
+    {
+     "key": "C",
+     "text": "序列标注"
+    },
+    {
+     "key": "D",
+     "text": "注意力机制"
+    }
+   ],
+   "answer": "A",
+   "docNum": "用于文本去重的SimHash算法核心思想是？"
+  },
+  {
+   "id": "single-38",
+   "type": "single",
+   "book": 1,
+   "section": "single",
+   "num": 38,
+   "stem": "下列哪项技术可检测对抗样本攻击？",
+   "options": [
+    {
+     "key": "A",
+     "text": "梯度掩码"
+    },
+    {
+     "key": "B",
+     "text": "输入变换"
+    },
+    {
+     "key": "C",
+     "text": "特征压缩"
+    },
+    {
+     "key": "D",
+     "text": "以上都是"
+    }
+   ],
+   "answer": "D",
+   "docNum": "下列哪项技术可检测对抗样本攻击？"
+  },
+  {
+   "id": "single-39",
+   "type": "single",
+   "book": 1,
+   "section": "single",
+   "num": 39,
+   "stem": "在模型监控中，概念漂移（Concept Drift）指？",
+   "options": [
+    {
+     "key": "A",
+     "text": "数据分布随时间变化"
+    },
+    {
+     "key": "B",
+     "text": "训练时间过长"
+    },
+    {
+     "key": "C",
+     "text": "显存不足"
+    },
+    {
+     "key": "D",
+     "text": "学习率过高"
+    }
+   ],
+   "answer": "A",
+   "docNum": "在模型监控中，概念漂移（Concept Drift）指？"
+  },
+  {
+   "id": "single-40",
+   "type": "single",
+   "book": 1,
+   "section": "single",
+   "num": 40,
+   "stem": "下列哪项工具常用于深度学习可视化？",
+   "options": [
+    {
+     "key": "A",
+     "text": "TensorBoard"
+    },
+    {
+     "key": "B",
+     "text": "Excel"
+    },
+    {
+     "key": "C",
+     "text": "Wireshark"
+    },
+    {
+     "key": "D",
+     "text": "Postman"
+    }
+   ],
+   "answer": "A",
+   "docNum": "下列哪项工具常用于深度学习可视化？"
+  },
+  {
+   "id": "single-41",
+   "type": "single",
+   "book": 1,
+   "section": "single",
+   "num": 41,
+   "stem": "在语音识别中，CTC损失解决了？",
+   "options": [
+    {
+     "key": "A",
+     "text": "输入输出对齐问题"
+    },
+    {
+     "key": "B",
+     "text": "梯度爆炸"
+    },
+    {
+     "key": "C",
+     "text": "过拟合"
+    },
+    {
+     "key": "D",
+     "text": "数据不平衡"
+    }
+   ],
+   "answer": "A",
+   "docNum": "在语音识别中，CTC损失解决了？"
+  },
+  {
+   "id": "single-42",
+   "type": "single",
+   "book": 1,
+   "section": "single",
+   "num": 42,
+   "stem": "下列哪项属于元学习（Meta-learning）的典型方法？",
+   "options": [
+    {
+     "key": "A",
+     "text": "MAML"
+    },
+    {
+     "key": "B",
+     "text": "ResNet"
+    },
+    {
+     "key": "C",
+     "text": "AlexNet"
+    },
+    {
+     "key": "D",
+     "text": "VGG"
+    }
+   ],
+   "answer": "A",
+   "docNum": "下列哪项属于元学习（Meta-learning）的典型方法？"
+  },
+  {
+   "id": "single-43",
+   "type": "single",
+   "book": 1,
+   "section": "single",
+   "num": 43,
+   "stem": "用于加速训练的多卡并行策略Data Parallel是指？",
+   "options": [
+    {
+     "key": "A",
+     "text": "模型分片"
+    },
+    {
+     "key": "B",
+     "text": "数据分片"
+    },
+    {
+     "key": "C",
+     "text": "混合精度"
+    },
+    {
+     "key": "D",
+     "text": "梯度累积"
+    }
+   ],
+   "answer": "B",
+   "docNum": "用于加速训练的多卡并行策略Data Parallel是指？"
+  },
+  {
+   "id": "single-44",
+   "type": "single",
+   "book": 1,
+   "section": "single",
+   "num": 44,
+   "stem": "在图像超分辨率中，PSNR指标的单位是？",
+   "options": [
+    {
+     "key": "A",
+     "text": "dB"
+    },
+    {
+     "key": "B",
+     "text": "Hz"
+    },
+    {
+     "key": "C",
+     "text": "px"
+    },
+    {
+     "key": "D",
+     "text": "FPS"
+    }
+   ],
+   "answer": "A",
+   "docNum": "在图像超分辨率中，PSNR指标的单位是？"
+  },
+  {
+   "id": "single-45",
+   "type": "single",
+   "book": 1,
+   "section": "single",
+   "num": 45,
+   "stem": "下列哪项技术可将文本转为向量且保留语义？",
+   "options": [
+    {
+     "key": "A",
+     "text": "Word2Vec"
+    },
+    {
+     "key": "B",
+     "text": "TF-IDF"
+    },
+    {
+     "key": "C",
+     "text": "One-hot"
+    },
+    {
+     "key": "D",
+     "text": "朴素贝叶斯"
+    }
+   ],
+   "answer": "A",
+   "docNum": "下列哪项技术可将文本转为向量且保留语义？"
+  },
+  {
+   "id": "single-46",
+   "type": "single",
+   "book": 1,
+   "section": "single",
+   "num": 46,
+   "stem": "在强化学习中，策略梯度（Policy Gradient）直接优化？",
+   "options": [
+    {
+     "key": "A",
+     "text": "价值函数"
+    },
+    {
+     "key": "B",
+     "text": "策略函数"
+    },
+    {
+     "key": "C",
+     "text": "奖励函数"
+    },
+    {
+     "key": "D",
+     "text": "状态转移"
+    }
+   ],
+   "answer": "B",
+   "docNum": "在强化学习中，策略梯度（Policy Gradient）直接优化？"
+  },
+  {
+   "id": "single-47",
+   "type": "single",
+   "book": 1,
+   "section": "single",
+   "num": 47,
+   "stem": "下列哪种方法可缓解训练数据不足？",
+   "options": [
+    {
+     "key": "A",
+     "text": "迁移学习"
+    },
+    {
+     "key": "B",
+     "text": "增加层数"
+    },
+    {
+     "key": "C",
+     "text": "提高分辨率"
+    },
+    {
+     "key": "D",
+     "text": "减少正则化"
+    }
+   ],
+   "answer": "A",
+   "docNum": "下列哪种方法可缓解训练数据不足？"
+  },
+  {
+   "id": "single-48",
+   "type": "single",
+   "book": 1,
+   "section": "single",
+   "num": 48,
+   "stem": "在CNN中，Global Average Pooling的作用是？",
+   "options": [
+    {
+     "key": "A",
+     "text": "减少参数量"
+    },
+    {
+     "key": "B",
+     "text": "增加感受野"
+    },
+    {
+     "key": "C",
+     "text": "替代激活函数"
+    },
+    {
+     "key": "D",
+     "text": "提高学习率"
+    }
+   ],
+   "answer": "A",
+   "docNum": "在CNN中，Global Average Pooling的作用是？"
+  },
+  {
+   "id": "single-49",
+   "type": "single",
+   "book": 1,
+   "section": "single",
+   "num": 49,
+   "stem": "用于文本匹配的Siamese网络特点是？",
+   "options": [
+    {
+     "key": "A",
+     "text": "共享权重"
+    },
+    {
+     "key": "B",
+     "text": "不同输入不同网络"
+    },
+    {
+     "key": "C",
+     "text": "仅支持CNN"
+    },
+    {
+     "key": "D",
+     "text": "无需损失函数"
+    }
+   ],
+   "answer": "A",
+   "docNum": "用于文本匹配的Siamese网络特点是？"
+  },
+  {
+   "id": "single-50",
+   "type": "single",
+   "book": 1,
+   "section": "single",
+   "num": 50,
+   "stem": "下列哪项技术可将模型部署到移动设备？",
+   "options": [
+    {
+     "key": "A",
+     "text": "TensorFlow Lite"
+    },
+    {
+     "key": "B",
+     "text": "Docker"
+    },
+    {
+     "key": "C",
+     "text": "Kubernetes"
+    },
+    {
+     "key": "D",
+     "text": "Hadoop"
+    }
+   ],
+   "answer": "A",
+   "docNum": "下列哪项技术可将模型部署到移动设备？"
+  },
+  {
+   "id": "single-51",
+   "type": "single",
+   "book": 1,
+   "section": "single",
+   "num": 51,
+   "stem": "在NLP中，Subword Tokenization的优势是？",
+   "options": [
+    {
+     "key": "A",
+     "text": "平衡词表大小与语义粒度"
+    },
+    {
+     "key": "B",
+     "text": "仅支持英文"
+    },
+    {
+     "key": "C",
+     "text": "增加OOV"
+    },
+    {
+     "key": "D",
+     "text": "降低计算效率"
+    }
+   ],
+   "answer": "A",
+   "docNum": "在NLP中，Subword Tokenization的优势是？"
+  },
+  {
+   "id": "single-52",
+   "type": "single",
+   "book": 1,
+   "section": "single",
+   "num": 52,
+   "stem": "下列哪项属于模型解释性工具？",
+   "options": [
+    {
+     "key": "A",
+     "text": "LIME"
+    },
+    {
+     "key": "B",
+     "text": "Adam"
+    },
+    {
+     "key": "C",
+     "text": "ReLU"
+    },
+    {
+     "key": "D",
+     "text": "Dropout"
+    }
+   ],
+   "answer": "A",
+   "docNum": "下列哪项属于模型解释性工具？"
+  },
+  {
+   "id": "single-53",
+   "type": "single",
+   "book": 1,
+   "section": "single",
+   "num": 53,
+   "stem": "在Diffusion模型采样中，DDIM的作用是？",
+   "options": [
+    {
+     "key": "A",
+     "text": "加速采样"
+    },
+    {
+     "key": "B",
+     "text": "增加噪声"
+    },
+    {
+     "key": "C",
+     "text": "降低精度"
+    },
+    {
+     "key": "D",
+     "text": "替换UNet"
+    }
+   ],
+   "answer": "A",
+   "docNum": "在Diffusion模型采样中，DDIM的作用是？"
+  },
+  {
+   "id": "single-54",
+   "type": "single",
+   "book": 1,
+   "section": "single",
+   "num": 54,
+   "stem": "下列哪项技术可自动搜索数据增强策略？",
+   "options": [
+    {
+     "key": "A",
+     "text": "AutoAugment"
+    },
+    {
+     "key": "B",
+     "text": "Grid Search"
+    },
+    {
+     "key": "C",
+     "text": "随机裁剪"
+    },
+    {
+     "key": "D",
+     "text": "水平翻转"
+    }
+   ],
+   "answer": "A",
+   "docNum": "下列哪项技术可自动搜索数据增强策略？"
+  },
+  {
+   "id": "single-55",
+   "type": "single",
+   "book": 1,
+   "section": "single",
+   "num": 55,
+   "stem": "在推荐系统中，冷启动问题不包括？",
+   "options": [
+    {
+     "key": "A",
+     "text": "新用户"
+    },
+    {
+     "key": "B",
+     "text": "新物品"
+    },
+    {
+     "key": "C",
+     "text": "新算法"
+    },
+    {
+     "key": "D",
+     "text": "稀疏数据"
+    }
+   ],
+   "answer": "C",
+   "docNum": "在推荐系统中，冷启动问题不包括？"
+  },
+  {
+   "id": "single-56",
+   "type": "single",
+   "book": 1,
+   "section": "single",
+   "num": 56,
+   "stem": "下列哪项损失函数用于边界框回归？",
+   "options": [
+    {
+     "key": "A",
+     "text": "Smooth L1"
+    },
+    {
+     "key": "B",
+     "text": "交叉熵"
+    },
+    {
+     "key": "C",
+     "text": "NLL"
+    },
+    {
+     "key": "D",
+     "text": "Hinge"
+    }
+   ],
+   "answer": "A",
+   "docNum": "下列哪项损失函数用于边界框回归？"
+  },
+  {
+   "id": "single-57",
+   "type": "single",
+   "book": 1,
+   "section": "single",
+   "num": 57,
+   "stem": "在模型蒸馏中，学生模型学习的是？",
+   "options": [
+    {
+     "key": "A",
+     "text": "教师模型的输出分布"
+    },
+    {
+     "key": "B",
+     "text": "原始标签"
+    },
+    {
+     "key": "C",
+     "text": "损失函数"
+    },
+    {
+     "key": "D",
+     "text": "优化器"
+    }
+   ],
+   "answer": "A",
+   "docNum": "在模型蒸馏中，学生模型学习的是？"
+  },
+  {
+   "id": "single-58",
+   "type": "single",
+   "book": 1,
+   "section": "single",
+   "num": 58,
+   "stem": "下列哪项技术可实现实时语音克隆？",
+   "options": [
+    {
+     "key": "A",
+     "text": "VITS"
+    },
+    {
+     "key": "B",
+     "text": "ResNet"
+    },
+    {
+     "key": "C",
+     "text": "YOLO"
+    },
+    {
+     "key": "D",
+     "text": "GloVe"
+    }
+   ],
+   "answer": "A",
+   "docNum": "下列哪项技术可实现实时语音克隆？"
+  },
+  {
+   "id": "single-59",
+   "type": "single",
+   "book": 1,
+   "section": "single",
+   "num": 59,
+   "stem": "在图注意力网络（GAT）中，注意力系数用于？",
+   "options": [
+    {
+     "key": "A",
+     "text": "加权聚合邻居特征"
+    },
+    {
+     "key": "B",
+     "text": "更新节点标签"
+    },
+    {
+     "key": "C",
+     "text": "随机丢弃边"
+    },
+    {
+     "key": "D",
+     "text": "增加噪声"
+    }
+   ],
+   "answer": "A",
+   "docNum": "在图注意力网络（GAT）中，注意力系数用于？"
+  },
+  {
+   "id": "single-60",
+   "type": "single",
+   "book": 1,
+   "section": "single",
+   "num": 60,
+   "stem": "下列哪项工具可管理ML实验与复现？",
+   "options": [
+    {
+     "key": "A",
+     "text": "MLflow"
+    },
+    {
+     "key": "B",
+     "text": "Photoshop"
+    },
+    {
+     "key": "C",
+     "text": "VSCode"
+    },
+    {
+     "key": "D",
+     "text": "Chrome"
+    }
+   ],
+   "answer": "A",
+   "docNum": "下列哪项工具可管理ML实验与复现？"
+  }
+ ],
+ "multi": [
+  {
+   "id": "multi-01",
+   "type": "multi",
+   "book": 1,
+   "section": "multi",
+   "num": 1,
+   "stem": "以下哪些是常见的机器学习类型？",
+   "options": [
+    {
+     "key": "A",
+     "text": "监督学习"
+    },
+    {
+     "key": "B",
+     "text": "无监督学习"
+    },
+    {
+     "key": "C",
+     "text": "强化学习"
+    },
+    {
+     "key": "D",
+     "text": "迁移学习"
+    }
+   ],
+   "answer": "ABCD",
+   "docNum": "以下哪些是常见的机器学习类型？"
+  },
+  {
+   "id": "multi-02",
+   "type": "multi",
+   "book": 1,
+   "section": "multi",
+   "num": 2,
+   "stem": "以下哪些属于监督学习任务？",
+   "options": [
+    {
+     "key": "A",
+     "text": "图像分类"
+    },
+    {
+     "key": "B",
+     "text": "房价预测"
+    },
+    {
+     "key": "C",
+     "text": "垃圾邮件检测"
+    },
+    {
+     "key": "D",
+     "text": "客户分群"
+    }
+   ],
+   "answer": "ABC",
+   "docNum": "以下哪些属于监督学习任务？"
+  },
+  {
+   "id": "multi-03",
+   "type": "multi",
+   "book": 1,
+   "section": "multi",
+   "num": 3,
+   "stem": "以下哪些属于无监督学习任务？",
+   "options": [
+    {
+     "key": "A",
+     "text": "图像分类"
+    },
+    {
+     "key": "B",
+     "text": "客户分群"
+    },
+    {
+     "key": "C",
+     "text": "数据降维"
+    },
+    {
+     "key": "D",
+     "text": "异常检测"
+    }
+   ],
+   "answer": "BCD",
+   "docNum": "以下哪些属于无监督学习任务？"
+  },
+  {
+   "id": "multi-04",
+   "type": "multi",
+   "book": 1,
+   "section": "multi",
+   "num": 4,
+   "stem": "以下哪些是神经网络中常用的层？",
+   "options": [
+    {
+     "key": "A",
+     "text": "输入层"
+    },
+    {
+     "key": "B",
+     "text": "隐藏层 (全连接层、卷积层、循环层等)"
+    },
+    {
+     "key": "C",
+     "text": "输出层"
+    },
+    {
+     "key": "D",
+     "text": "池化层"
+    }
+   ],
+   "answer": "ABCD",
+   "docNum": "以下哪些是神经网络中常用的层？"
+  },
+  {
+   "id": "multi-05",
+   "type": "multi",
+   "book": 1,
+   "section": "multi",
+   "num": 5,
+   "stem": "以下哪些是常用的激活函数？",
+   "options": [
+    {
+     "key": "A",
+     "text": "Sigmoid"
+    },
+    {
+     "key": "B",
+     "text": "ReLU"
+    },
+    {
+     "key": "C",
+     "text": "Tanh"
+    },
+    {
+     "key": "D",
+     "text": "Softmax (常用于输出层)"
+    }
+   ],
+   "answer": "ABCD",
+   "docNum": "以下哪些是常用的激活函数？"
+  },
+  {
+   "id": "multi-06",
+   "type": "multi",
+   "book": 1,
+   "section": "multi",
+   "num": 6,
+   "stem": "以下哪些是常用的损失函数？",
+   "options": [
+    {
+     "key": "A",
+     "text": "均方误差 (MSE - 回归)"
+    },
+    {
+     "key": "B",
+     "text": "交叉熵损失 (Cross-Entropy - 分类)"
+    },
+    {
+     "key": "C",
+     "text": "平均绝对误差 (MAE - 回归)"
+    },
+    {
+     "key": "D",
+     "text": "Hinge Loss (SVM)"
+    }
+   ],
+   "answer": "ABCD",
+   "docNum": "以下哪些是常用的损失函数？"
+  },
+  {
+   "id": "multi-07",
+   "type": "multi",
+   "book": 1,
+   "section": "multi",
+   "num": 7,
+   "stem": "以下哪些是常用的模型评估指标？",
+   "options": [
+    {
+     "key": "A",
+     "text": "准确率 (分类)"
+    },
+    {
+     "key": "B",
+     "text": "精确率 (分类)"
+    },
+    {
+     "key": "C",
+     "text": "召回率 (分类)"
+    },
+    {
+     "key": "D",
+     "text": "F1分数 (分类)"
+    },
+    {
+     "key": "E",
+     "text": "均方误差 (回归)"
+    },
+    {
+     "key": "F",
+     "text": "R平方 (回归)"
+    }
+   ],
+   "answer": "ABCDEF",
+   "docNum": "以下哪些是常用的模型评估指标？"
+  },
+  {
+   "id": "multi-08",
+   "type": "multi",
+   "book": 1,
+   "section": "multi",
+   "num": 8,
+   "stem": "以下哪些方法可以用来防止过拟合？",
+   "options": [
+    {
+     "key": "A",
+     "text": "获取更多训练数据"
+    },
+    {
+     "key": "B",
+     "text": "使用正则化 (L1, L2)"
+    },
+    {
+     "key": "C",
+     "text": "使用 Dropout"
+    },
+    {
+     "key": "D",
+     "text": "使用数据增强"
+    },
+    {
+     "key": "E",
+     "text": "早停法"
+    }
+   ],
+   "answer": "ABCDE",
+   "docNum": "以下哪些方法可以用来防止过拟合？"
+  },
+  {
+   "id": "multi-09",
+   "type": "multi",
+   "book": 1,
+   "section": "multi",
+   "num": 9,
+   "stem": "以下哪些是常用的数据预处理步骤？",
+   "options": [
+    {
+     "key": "A",
+     "text": "处理缺失值"
+    },
+    {
+     "key": "B",
+     "text": "处理异常值"
+    },
+    {
+     "key": "C",
+     "text": "特征缩放/标准化"
+    },
+    {
+     "key": "D",
+     "text": "特征编码 (如独热编码)"
+    },
+    {
+     "key": "E",
+     "text": "特征选择"
+    }
+   ],
+   "answer": "ABCDE",
+   "docNum": "以下哪些是常用的数据预处理步骤？"
+  },
+  {
+   "id": "multi-10",
+   "type": "multi",
+   "book": 1,
+   "section": "multi",
+   "num": 10,
+   "stem": "以下哪些是自然语言处理 (NLP) 的常见任务？",
+   "options": [
+    {
+     "key": "A",
+     "text": "文本分类"
+    },
+    {
+     "key": "B",
+     "text": "情感分析"
+    },
+    {
+     "key": "C",
+     "text": "机器翻译"
+    },
+    {
+     "key": "D",
+     "text": "命名实体识别"
+    },
+    {
+     "key": "E",
+     "text": "问答系统"
+    }
+   ],
+   "answer": "ABCDE",
+   "docNum": "以下哪些是自然语言处理 (NLP) 的常见任务？"
+  },
+  {
+   "id": "multi-11",
+   "type": "multi",
+   "book": 1,
+   "section": "multi",
+   "num": 11,
+   "stem": "以下哪些是计算机视觉 (CV) 的常见任务？",
+   "options": [
+    {
+     "key": "A",
+     "text": "图像分类"
+    },
+    {
+     "key": "B",
+     "text": "目标检测"
+    },
+    {
+     "key": "C",
+     "text": "图像分割"
+    },
+    {
+     "key": "D",
+     "text": "人脸识别"
+    },
+    {
+     "key": "E",
+     "text": "图像生成"
+    }
+   ],
+   "answer": "ABCDE",
+   "docNum": "以下哪些是计算机视觉 (CV) 的常见任务？"
+  },
+  {
+   "id": "multi-12",
+   "type": "multi",
+   "book": 1,
+   "section": "multi",
+   "num": 12,
+   "stem": "以下哪些是常用的特征工程方法？",
+   "options": [
+    {
+     "key": "A",
+     "text": "特征缩放 (标准化/归一化)"
+    },
+    {
+     "key": "B",
+     "text": "特征编码 (独热/标签)"
+    },
+    {
+     "key": "C",
+     "text": "特征选择 (过滤/包裹/嵌入)"
+    },
+    {
+     "key": "D",
+     "text": "特征构造 (组合/变换)"
+    },
+    {
+     "key": "E",
+     "text": "特征提取 (PCA/自动编码器)"
+    }
+   ],
+   "answer": "ABCDE",
+   "docNum": "以下哪些是常用的特征工程方法？"
+  },
+  {
+   "id": "multi-13",
+   "type": "multi",
+   "book": 1,
+   "section": "multi",
+   "num": 13,
+   "stem": "以下哪些是生成式 AI 模型的例子？",
+   "options": [
+    {
+     "key": "A",
+     "text": "用于分类的 CNN"
+    },
+    {
+     "key": "B",
+     "text": "生成图片的 GAN"
+    },
+    {
+     "key": "C",
+     "text": "生成文本的 GPT"
+    },
+    {
+     "key": "D",
+     "text": "生成音乐的模型"
+    },
+    {
+     "key": "E",
+     "text": "用于预测的 LSTM"
+    }
+   ],
+   "answer": "BCD",
+   "docNum": "以下哪些是生成式 AI 模型的例子？"
+  },
+  {
+   "id": "multi-14",
+   "type": "multi",
+   "book": 1,
+   "section": "multi",
+   "num": 14,
+   "stem": "以下哪些是模型部署到生产环境后需要考虑的方面？",
+   "options": [
+    {
+     "key": "A",
+     "text": "模型推理速度 (延迟)"
+    },
+    {
+     "key": "B",
+     "text": "模型处理请求的能力 (吞吐量)"
+    },
+    {
+     "key": "C",
+     "text": "模型消耗的计算资源 (CPU/GPU/内存)"
+    },
+    {
+     "key": "D",
+     "text": "模型的监控和维护"
+    },
+    {
+     "key": "E",
+     "text": "模型的安全性"
+    }
+   ],
+   "answer": "ABCDE",
+   "docNum": "以下哪些是模型部署到生产环境后需要考虑的方面？"
+  },
+  {
+   "id": "multi-15",
+   "type": "multi",
+   "book": 1,
+   "section": "multi",
+   "num": 15,
+   "stem": "以下哪些是常用的 Python 库在 AI/ML 项目中？",
+   "options": [
+    {
+     "key": "A",
+     "text": "NumPy (数值计算)"
+    },
+    {
+     "key": "B",
+     "text": "Pandas (数据处理)"
+    },
+    {
+     "key": "C",
+     "text": "Matplotlib / Seaborn (可视化)"
+    },
+    {
+     "key": "D",
+     "text": "Scikit-learn (传统 ML)"
+    },
+    {
+     "key": "E",
+     "text": "PyTorch / TensorFlow (深度学习)"
+    }
+   ],
+   "answer": "ABCDE",
+   "docNum": "以下哪些是常用的 Python 库在 AI/ML 项目中？"
+  },
+  {
+   "id": "multi-16",
+   "type": "multi",
+   "book": 1,
+   "section": "multi",
+   "num": 16,
+   "stem": "以下哪些是集成学习的方法？",
+   "options": [
+    {
+     "key": "A",
+     "text": "Bagging (如随机森林)"
+    },
+    {
+     "key": "B",
+     "text": "Boosting (如 AdaBoost, XGBoost)"
+    },
+    {
+     "key": "C",
+     "text": "Stacking"
+    },
+    {
+     "key": "D",
+     "text": "Dropout (属于正则化，非集成)"
+    }
+   ],
+   "answer": "ABC",
+   "docNum": "以下哪些是集成学习的方法？"
+  },
+  {
+   "id": "multi-17",
+   "type": "multi",
+   "book": 1,
+   "section": "multi",
+   "num": 17,
+   "stem": "以下哪些是处理时间序列数据的常用模型？",
+   "options": [
+    {
+     "key": "A",
+     "text": "ARIMA (传统统计)"
+    },
+    {
+     "key": "B",
+     "text": "LSTM / GRU (深度学习)"
+    },
+    {
+     "key": "C",
+     "text": "Prophet (Facebook)"
+    },
+    {
+     "key": "D",
+     "text": "1D CNN (深度学习)"
+    },
+    {
+     "key": "E",
+     "text": "线性回归 (简单基线)"
+    }
+   ],
+   "answer": "ABCDE",
+   "docNum": "以下哪些是处理时间序列数据的常用模型？"
+  },
+  {
+   "id": "multi-18",
+   "type": "multi",
+   "book": 1,
+   "section": "multi",
+   "num": 18,
+   "stem": "迁移学习的典型应用场景包括？",
+   "options": [
+    {
+     "key": "A",
+     "text": "目标任务数据量非常大"
+    },
+    {
+     "key": "B",
+     "text": "目标任务数据量有限"
+    },
+    {
+     "key": "C",
+     "text": "目标任务与源任务有相关性"
+    },
+    {
+     "key": "D",
+     "text": "需要快速构建原型"
+    }
+   ],
+   "answer": "BCD",
+   "docNum": "迁移学习的典型应用场景包括？"
+  },
+  {
+   "id": "multi-19",
+   "type": "multi",
+   "book": 1,
+   "section": "multi",
+   "num": 19,
+   "stem": "以下哪些是常用的推荐系统算法？",
+   "options": [
+    {
+     "key": "A",
+     "text": "协同过滤 (基于用户/物品)"
+    },
+    {
+     "key": "B",
+     "text": "基于内容的推荐"
+    },
+    {
+     "key": "C",
+     "text": "混合推荐"
+    },
+    {
+     "key": "D",
+     "text": "矩阵分解"
+    }
+   ],
+   "answer": "ABCD",
+   "docNum": "以下哪些是常用的推荐系统算法？"
+  },
+  {
+   "id": "multi-20",
+   "type": "multi",
+   "book": 1,
+   "section": "multi",
+   "num": 20,
+   "stem": "模型压缩的常用技术包括？",
+   "options": [
+    {
+     "key": "A",
+     "text": "模型剪枝"
+    },
+    {
+     "key": "B",
+     "text": "模型量化"
+    },
+    {
+     "key": "C",
+     "text": "知识蒸馏"
+    },
+    {
+     "key": "D",
+     "text": "增加模型深度"
+    }
+   ],
+   "answer": "ABC",
+   "docNum": "模型压缩的常用技术包括？"
+  },
+  {
+   "id": "multi-21",
+   "type": "multi",
+   "book": 1,
+   "section": "multi",
+   "num": 21,
+   "stem": "卷积神经网络的组成包括？",
+   "options": [
+    {
+     "key": "A",
+     "text": "卷积层"
+    },
+    {
+     "key": "B",
+     "text": "池化层"
+    },
+    {
+     "key": "C",
+     "text": "循环层"
+    },
+    {
+     "key": "D",
+     "text": "全连接层"
+    }
+   ],
+   "answer": "ABD",
+   "docNum": "21. 卷积神经网络的组成包括？"
+  },
+  {
+   "id": "multi-22",
+   "type": "multi",
+   "book": 1,
+   "section": "multi",
+   "num": 22,
+   "stem": "以下属于集成学习方法的是？",
+   "options": [
+    {
+     "key": "A",
+     "text": "Bagging"
+    },
+    {
+     "key": "B",
+     "text": "Boosting"
+    },
+    {
+     "key": "C",
+     "text": "Dropout"
+    },
+    {
+     "key": "D",
+     "text": "批归一化"
+    }
+   ],
+   "answer": "AB",
+   "docNum": "22. 以下属于集成学习方法的是？"
+  },
+  {
+   "id": "multi-23",
+   "type": "multi",
+   "book": 1,
+   "section": "multi",
+   "num": 23,
+   "stem": "影响模型泛化能力的因素有？",
+   "options": [
+    {
+     "key": "A",
+     "text": "训练数据量"
+    },
+    {
+     "key": "B",
+     "text": "模型复杂度"
+    },
+    {
+     "key": "C",
+     "text": "损失函数类型"
+    },
+    {
+     "key": "D",
+     "text": "优化器选择"
+    }
+   ],
+   "answer": "AB",
+   "docNum": "影响模型泛化能力的因素有？"
+  },
+  {
+   "id": "multi-24",
+   "type": "multi",
+   "book": 1,
+   "section": "multi",
+   "num": 24,
+   "stem": "自然语言处理任务包括？",
+   "options": [
+    {
+     "key": "A",
+     "text": "机器翻译"
+    },
+    {
+     "key": "B",
+     "text": "命名实体识别"
+    },
+    {
+     "key": "C",
+     "text": "图像分类"
+    },
+    {
+     "key": "D",
+     "text": "语音合成"
+    }
+   ],
+   "answer": "AB",
+   "docNum": "自然语言处理任务包括？"
+  },
+  {
+   "id": "multi-25",
+   "type": "multi",
+   "book": 1,
+   "section": "multi",
+   "num": 25,
+   "stem": "以下技术用于模型压缩？",
+   "options": [
+    {
+     "key": "A",
+     "text": "剪枝"
+    },
+    {
+     "key": "B",
+     "text": "量化"
+    },
+    {
+     "key": "C",
+     "text": "数据增强"
+    },
+    {
+     "key": "D",
+     "text": "特征缩放"
+    }
+   ],
+   "answer": "AB",
+   "docNum": "以下技术用于模型压缩？"
+  },
+  {
+   "id": "multi-26",
+   "type": "multi",
+   "book": 1,
+   "section": "multi",
+   "num": 26,
+   "stem": "强化学习基本要素包括？",
+   "options": [
+    {
+     "key": "A",
+     "text": "状态"
+    },
+    {
+     "key": "B",
+     "text": "动作"
+    },
+    {
+     "key": "C",
+     "text": "奖励"
+    },
+    {
+     "key": "D",
+     "text": "数据集"
+    }
+   ],
+   "answer": "ABC",
+   "docNum": "强化学习基本要素包括？"
+  },
+  {
+   "id": "multi-27",
+   "type": "multi",
+   "book": 1,
+   "section": "multi",
+   "num": 27,
+   "stem": "过拟合的解决策略有？",
+   "options": [
+    {
+     "key": "A",
+     "text": "正则化"
+    },
+    {
+     "key": "B",
+     "text": "增加数据"
+    },
+    {
+     "key": "C",
+     "text": "减少模型层数"
+    },
+    {
+     "key": "D",
+     "text": "提高学习率"
+    }
+   ],
+   "answer": "ABC",
+   "docNum": "过拟合的解决策略有？"
+  },
+  {
+   "id": "multi-28",
+   "type": "multi",
+   "book": 1,
+   "section": "multi",
+   "num": 28,
+   "stem": "图神经网络应用场景包括？",
+   "options": [
+    {
+     "key": "A",
+     "text": "推荐系统"
+    },
+    {
+     "key": "B",
+     "text": "分子属性预测"
+    },
+    {
+     "key": "C",
+     "text": "图像识别"
+    },
+    {
+     "key": "D",
+     "text": "文本分类"
+    }
+   ],
+   "answer": "AB",
+   "docNum": "图神经网络应用场景包括？"
+  },
+  {
+   "id": "multi-29",
+   "type": "multi",
+   "book": 1,
+   "section": "multi",
+   "num": 29,
+   "stem": "以下属于无监督学习任务的是？",
+   "options": [
+    {
+     "key": "A",
+     "text": "聚类"
+    },
+    {
+     "key": "B",
+     "text": "降维"
+    },
+    {
+     "key": "C",
+     "text": "分类"
+    },
+    {
+     "key": "D",
+     "text": "回归"
+    }
+   ],
+   "answer": "AB",
+   "docNum": "以下属于无监督学习任务的是？"
+  },
+  {
+   "id": "multi-30",
+   "type": "multi",
+   "book": 1,
+   "section": "multi",
+   "num": 30,
+   "stem": "模型部署方式包括？",
+   "options": [
+    {
+     "key": "A",
+     "text": "云端API"
+    },
+    {
+     "key": "B",
+     "text": "边缘设备"
+    },
+    {
+     "key": "C",
+     "text": "数据库存储"
+    },
+    {
+     "key": "D",
+     "text": "训练集群"
+    }
+   ],
+   "answer": "AB",
+   "docNum": "模型部署方式包括？"
+  }
+ ],
+ "qa1": [
+  {
+   "id": "qa1-01",
+   "type": "qa",
+   "book": 1,
+   "section": "qa1",
+   "num": 1,
+   "stem": "什么是过拟合？ 怎么判断模型可能过拟合了？",
+   "options": [],
+   "answer": "过拟合指模型在训练数据上表现很好，但在新数据（测试集）上表现差。判断：训练集精度远高于测试集精度。"
+  },
+  {
+   "id": "qa1-02",
+   "type": "qa",
+   "book": 1,
+   "section": "qa1",
+   "num": 2,
+   "stem": "什么是欠拟合？ 怎么判断模型可能欠拟合了？",
+   "options": [],
+   "answer": "欠拟合指模型在训练数据上也表现不好（没学好）。判断：训练集精度低，测试集精度也低。"
+  },
+  {
+   "id": "qa1-03",
+   "type": "qa",
+   "book": 1,
+   "section": "qa1",
+   "num": 3,
+   "stem": "简述监督学习和无监督学习的主要区别。",
+   "options": [],
+   "answer": "监督学习：数据有标签（正确答案），教模型做预测。无监督学习：数据无标签，让模型自己发现数据中的结构/模式。"
+  },
+  {
+   "id": "qa1-04",
+   "type": "qa",
+   "book": 1,
+   "section": "qa1",
+   "num": 4,
+   "stem": "为什么在神经网络中需要使用激活函数？",
+   "options": [],
+   "answer": "引入非线性。没有激活函数，多层网络等价于单层线性模型，无法学习复杂关系。"
+  },
+  {
+   "id": "qa1-05",
+   "type": "qa",
+   "book": 1,
+   "section": "qa1",
+   "num": 5,
+   "stem": "什么是梯度下降？ 它的目标是什么？",
+   "options": [],
+   "answer": "一种优化算法。目标：通过计算损失函数的梯度（坡度），并沿负梯度方向更新模型参数，以最小化损失函数。"
+  },
+  {
+   "id": "qa1-06",
+   "type": "qa",
+   "book": 1,
+   "section": "qa1",
+   "num": 6,
+   "stem": "交叉验证 (Cross-Validation) 的主要目的是什么？",
+   "options": [],
+   "answer": "更可靠地评估模型在未知数据上的性能（泛化能力），减少因单次数据划分带来的随机性误差。"
+  },
+  {
+   "id": "qa1-07",
+   "type": "qa",
+   "book": 1,
+   "section": "qa1",
+   "num": 7,
+   "stem": "什么是数据增强？ 为什么在图像任务中常用？",
+   "options": [],
+   "answer": "通过人工方法（如旋转、裁剪）增加训练数据量。目的：让模型看到更多变化，提高泛化能力，减轻过拟合。"
+  },
+  {
+   "id": "qa1-08",
+   "type": "qa",
+   "book": 1,
+   "section": "qa1",
+   "num": 8,
+   "stem": "迁移学习的基本思想是什么？",
+   "options": [],
+   "answer": "利用在大任务A上训练好的模型的知识（学到的特征），来帮助更快更好地解决小任务B（尤其当任务B数据少时）。"
+  },
+  {
+   "id": "qa1-09",
+   "type": "qa",
+   "book": 1,
+   "section": "qa1",
+   "num": 9,
+   "stem": "简要说明卷积神经网络 (CNN) 中卷积层的作用。",
+   "options": [],
+   "answer": "使用卷积核（过滤器）扫描输入图像，提取局部特征（如边缘、纹理）。"
+  },
+  {
+   "id": "qa1-10",
+   "type": "qa",
+   "book": 1,
+   "section": "qa1",
+   "num": 10,
+   "stem": "什么是注意力机制？ 它的核心思想是什么？",
+   "options": [],
+   "answer": "一种让模型在处理信息时能“聚焦”于输入中重要部分的技术。核心思想：给输入的不同部分分配不同的重要性权重。"
+  }
+ ],
+ "qa2": [
+  {
+   "id": "qa2-01",
+   "type": "qa",
+   "book": 2,
+   "section": "qa2",
+   "num": 1,
+   "stem": "对比美国与欧盟AI政策的核心差异，并分析其成因。",
+   "options": [],
+   "answer": "美国：市场导向，鼓励创新，监管宽松（如\"星际之门\"计划）。\n欧盟：严格风险分级，强调权利保护（如《AI法案》禁止社会评分）。\n成因：美国重视技术领先与商业利益；欧盟侧重公民权利与风险防控，受GDPR传统影响。"
+  },
+  {
+   "id": "qa2-02",
+   "type": "qa",
+   "book": 2,
+   "section": "qa2",
+   "num": 2,
+   "stem": "列举生成式AI服务的两大合规风险，并说明《生成式AI服务管理暂行办法》如何应对。",
+   "options": [],
+   "answer": "风险1：虚假信息传播 → 《办法》要求对生成内容标识来源。  风险2：侵犯数据隐私 → 《办法》规定训练数据需合法获取，涉及个人信息须获授权。"
+  },
+  {
+   "id": "qa2-03",
+   "type": "qa",
+   "book": 2,
+   "section": "qa2",
+   "num": 3,
+   "stem": "简述人脸识别技术的四个关键步骤及其应用场景。",
+   "options": [],
+   "answer": "图像采集：摄像头捕捉人脸图像（如手机解锁）。人脸检测：定位人脸位置（如门禁系统）。特征提取：提取眼睛/鼻子等特征（生成生物“密码”）。特征匹配：与数据库比对（如安防追踪嫌疑人）。"
+  },
+  {
+   "id": "qa2-04",
+   "type": "qa",
+   "book": 2,
+   "section": "qa2",
+   "num": 4,
+   "stem": "AI助教如何通过课堂行为分析推动个性化教育？结合实例说明。",
+   "options": [],
+   "answer": "AI助教利用摄像头/传感器捕捉学生课堂行为数据（如注意力、参与度）。例如，系统识别到学生A频繁打哈欠（注意力分散），自动通知教师调整教学节奏；检测到学生B积极互动，则推送进阶问题。教师据此定制教学策略，实现因材施教。"
+  },
+  {
+   "id": "qa2-05",
+   "type": "qa",
+   "book": 2,
+   "section": "qa2",
+   "num": 5,
+   "stem": "简述有监督学习与无监督学习的区别，并各举一个应用实例。",
+   "options": [],
+   "answer": "区别：有监督学习使用带标签的数据训练模型，目标是预测输出；无监督学习使用无标签数据，目标是发现数据内在结构。\n有监督实例：垃圾邮件过滤（输入邮件特征，输出是否为垃圾邮件）。\n无监督实例：客户分群（根据购买行为将客户聚类，无预定义类别）。"
+  },
+  {
+   "id": "qa2-06",
+   "type": "qa",
+   "book": 2,
+   "section": "qa2",
+   "num": 6,
+   "stem": "说明推荐系统中协同过滤与基于内容推荐的差异，并各举一例。",
+   "options": [],
+   "answer": "协同过滤：基于用户行为相似度（如“喜欢科幻电影的用户A和B，A新看电影推荐给B”）。\n基于内容推荐：基于物品特征匹配（如“用户常看科技新闻，推荐其他科技类文章”）。\n差异：协同过滤依赖用户行为数据，内容推荐依赖物品特征分析。"
+  }
+ ]
+}

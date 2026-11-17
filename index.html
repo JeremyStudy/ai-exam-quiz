@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AI 算法工程师 · 背题答题台</title>
+<meta name="description" content="AI 算法工程师题库 + 实操题库：106 道题的背题与答题双模式练习，含答案解析、记忆要点、易错点和答案可靠性标注。">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🧠</text></svg>">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<header class="topbar">
+  <div class="brand">
+    <span class="logo">AI</span>
+    <div class="brand-text">
+      <h1>算法工程师 · 背题答题台</h1>
+      <p class="sub">106 题 · 单选 / 多选 / 问答 · 含答案可靠性标注</p>
+    </div>
+  </div>
+  <nav class="modes" id="modeNav" aria-label="模式切换">
+    <button type="button" data-mode="study" class="active">📖 背题模式</button>
+    <button type="button" data-mode="quiz">✍️ 答题模式</button>
+  </nav>
+  <button type="button" id="themeBtn" class="icon-btn" title="切换深浅色" aria-label="切换深浅色">🌙</button>
+</header>
+
+<main class="wrap">
+  <section class="toolbar" aria-label="筛选">
+    <label class="field">
+      <span class="field-label">题库</span>
+      <select id="bookSel">
+        <option value="all">全部（106）</option>
+        <option value="1">文档1 · 算法工程师（100）</option>
+        <option value="2">文档2 · 系列实操（6）</option>
+      </select>
+    </label>
+    <label class="field">
+      <span class="field-label">状态</span>
+      <select id="statusSel">
+        <option value="all">全部</option>
+        <option value="unmastered">未掌握</option>
+        <option value="mastered">已掌握</option>
+        <option value="wrong">错题本</option>
+        <option value="flagged">有标注（错误/存疑/提示）</option>
+      </select>
+    </label>
+    <label class="field grow">
+      <span class="field-label">搜索</span>
+      <input id="searchInput" type="search" placeholder="搜索题干或选项关键词…" autocomplete="off">
+    </label>
+    <button type="button" id="randomBtn" class="btn ghost" title="随机跳到一题">🎲 随机</button>
+  </section>
+
+  <div class="progressline" id="progressLine"></div>
+
+  <section id="view" aria-live="polite"></section>
+</main>
+
+<footer class="footer">
+  <p>答案可靠性标注来自逐题复核：<strong>⛔ 存在错误</strong> / <strong>⚠️ 答案存疑</strong> / <strong>💡 表述提示</strong> 三类题目的原答案与本平台建议以卡片内「我的见解」为准。</p>
+  <p class="muted">进度保存在本机浏览器（localStorage），清除站点数据会重置。快捷键：← → 切题 · 空格 隐藏/显示答案 · M 标记掌握 · 数字键选答案。</p>
+</footer>
+
+<script src="data/questions.js"></script>
+<script src="assets/app.js"></script>
+</body>
+</html>
